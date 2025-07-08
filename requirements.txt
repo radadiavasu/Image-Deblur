@@ -1,0 +1,8 @@
+basicsr==1.4.2
+Flask==3.1.1
+numpy==2.3.1
+opencv_python==4.9.0.80
+Pillow==9.5.0
+Pillow==11.3.0
+realesrgan==0.3.0
+torch==2.7.1
