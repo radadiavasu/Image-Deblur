@@ -10,7 +10,7 @@ WORKDIR /app
 
 # Install system packages
 RUN apt-get update && \
-    apt-get install -y git wget libgl1-mesa-glx libglib2.0-0 && \
+    apt-get install -y git libgl1-mesa-glx libglib2.0-0 && \
     apt-get clean
 
 # Copy and install dependencies
