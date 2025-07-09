@@ -7,3 +7,4 @@ Pillow==11.3.0
 realesrgan==0.3.0
 torch==2.7.1
 waitress==3.0.2
+gunicorn
