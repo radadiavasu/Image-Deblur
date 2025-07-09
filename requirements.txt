@@ -1,6 +1,6 @@
 flask
 gunicorn
-torch
+torch==2.5.1
 numpy
 pillow
 scipy
