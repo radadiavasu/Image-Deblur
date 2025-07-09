@@ -11,7 +11,7 @@ mkdir -p weights
 
 # Download pretrained model files from Google Drive
 echo "Downloading RealESRGAN_x4plus.pth..."
-wget --no-check-certificate -O weights/RealESRGAN_x4plus.pth "https://drive.google.com/uc?export=download&id=1ANr9r3nvbPFm1WeSqU8m5uKo02EQsill"
+gdown https://drive.google.com/uc?export=download&id=1ANr9r3nvbPFm1WeSqU8m5uKo02EQsill -O weights/RealESRGAN_x4plus.pth 
 
 echo "Downloading NAFNet-GoPro-width64.pth..."
-wget --no-check-certificate -O weights/NAFNet-GoPro-width64.pth "https://drive.google.com/uc?export=download&id=1ktLPKu3wwu_3ZkIHslL5OdG7pPLPC1Vc"
+gdown https://drive.google.com/uc?export=download&id=1ktLPKu3wwu_3ZkIHslL5OdG7pPLPC1Vc -O weights/NAFNet-GoPro-width64.pth 
