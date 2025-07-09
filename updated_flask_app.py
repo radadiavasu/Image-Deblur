@@ -18,6 +18,10 @@ import cv2
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size
 
+@app.route("/ping")
+def ping():
+    return "OK", 200
+
 # Global variables
 upsampler = None
 processing_status = {}
