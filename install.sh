@@ -1,17 +1,20 @@
 #!/bin/bash
 
-# Install BasicSR from Git (bypassing wheel build issues)
+# Install BasicSR first
 pip install --no-build-isolation git+https://github.com/XPixelGroup/BasicSR.git#egg=basicsr
 
-# Install rest of the Python packages
+# Install Python dependencies
 pip install -r requirements.txt
 
-# Create weights folder
+# Install gdown
+pip install gdown
+
+# Create weights directory
 mkdir -p weights
 
-# Download pretrained model files from Google Drive
+# Download weights from Google Drive using gdown
 echo "Downloading RealESRGAN_x4plus.pth..."
-gdown https://drive.google.com/uc?export=download&id=1ANr9r3nvbPFm1WeSqU8m5uKo02EQsill -O weights/RealESRGAN_x4plus.pth 
+gdown --id 1ANr9r3nvbPFm1WeSqU8m5uKo02EQsill -O weights/RealESRGAN_x4plus.pth
 
 echo "Downloading NAFNet-GoPro-width64.pth..."
-gdown https://drive.google.com/uc?export=download&id=1ktLPKu3wwu_3ZkIHslL5OdG7pPLPC1Vc -O weights/NAFNet-GoPro-width64.pth 
+gdown --id 1ktLPKu3wwu_3ZkIHslL5OdG7pPLPC1Vc -O weights/NAFNet-GoPro-width64.pth
