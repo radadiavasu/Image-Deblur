@@ -27,12 +27,20 @@ upsampler = None
 processing_status = {}
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Your model paths (update these paths to match your setup)
+# Get absolute directory of the current file (safe for local + deployment)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Relative-safe paths for your models
 MODEL_PATHS = {
-    "RealESRGAN_x4plus": r'G:\real-esrgan\weights\RealESRGAN_x4plus.pth',
-    "NAFNet-GoPro-width64": r'G:\real-esrgan\weights\NAFNet-GoPro-width64.pth',
-    # Add more models as needed
+    "RealESRGAN_x4plus": os.path.join(BASE_DIR, "weights", "RealESRGAN_x4plus.pth"),
+    "NAFNet-GoPro-width64": os.path.join(BASE_DIR, "weights", "NAFNet-GoPro-width64.pth"),
+    # Add more if needed
 }
+
+for model_name, model_path in MODEL_PATHS.items():
+    # Check if model exists
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"Model not found at: {model_path}")
 
 class CustomRealESRGANer(RealESRGANer):
     """Custom RealESRGANer with tile progress tracking"""
