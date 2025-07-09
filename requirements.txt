@@ -1,10 +1,8 @@
-git+https://github.com/XPixelGroup/BasicSR.git#egg=basicsr
-Flask==3.1.1
-numpy==2.3.1
-opencv_python==4.9.0.80
-Pillow==9.5.0
-Pillow==11.3.0
-realesrgan==0.3.0
-torch==2.7.1
-waitress==3.0.2
+flask
 gunicorn
+torch
+numpy
+pillow
+scipy
+opencv-python
+realesrgan
